@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=412, height=892, initial-scale=1.0" />
+  <title>Inicio - Potterheads</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Roboto&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  />
+</head>
+<body>
+  <div class="top-navbar">
+    <img src="../../LOGO/LOGO_TEST_2.png" alt="Logo" />
+    <h1>POTTERHEADS</h1>
+    <a href="CHATS.html" class="chat-link">
+      <img src="UTIL/CHAT.png" alt="chat" />
+    </a>
+  </div>
+
+ <!-- Contenido -->
+<div class="content">
+  <!-- Post 1 -->
+  <div class="post" data-post-id="1">
+    <div class="post-header">
+      <img src="UTIL/PROFILE_PIC.png" alt="Usuario" />
+      <div style="flex: 1;">
+        <div class="post-title">Magic Harry</div>
+      </div>
+      <div class="post-menu-container">
+        <button
+          class="post-menu-btn"
+          aria-label="Opciones del post"
+          onclick="togglePostMenu(this)"
+        >
+          <i class="bi bi-three-dots-vertical"></i>
+        </button>
+        <div class="post-menu" role="menu">
+          <button role="menuitem" onclick="closePostMenu()">Comentarios</button>
+          <button role="menuitem" onclick="closePostMenu()">Compartir</button>
+          <button role="menuitem" onclick="closePostMenu()">Favoritos</button>
+          <button role="menuitem" onclick="closePostMenu()">Guardar</button>
+          <button role="menuitem" onclick="closePostMenu()">Alertas</button>
+          <button role="menuitem" onclick="closePostMenu()">Archivar</button>
+          <button
+            role="menuitem"
+            onclick="confirmDelete(this.closest('.post'))"
+            style="color:#b33; font-weight:bold;"
+          >
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="post-img"
+      style="background-image: url(https://www.completeset.com/content/images/wordpress/2016/05/the-harry-potter-wands-you-never-knew-you-needed_batch3.jpg);"
+    ></div>
+    <div class="post-body">
+      <div class="post-description">
+        Esta es una descripción para el primer post de prueba.
+      </div>
+    </div>
+    <div class="post-actions">
+      <button onclick="toggleLike(this)"><i class="bi bi-heart"></i></button>
+      <button><i class="bi bi-chat"></i></button>
+      <button><i class="bi bi-share"></i></button>
+    </div>
+  </div>
+
+  <!-- Post 2 -->
+  <div class="post" data-post-id="2">
+    <div class="post-header">
+      <img src="UTIL/PROFILE_PIC.png" alt="Usuario" />
+      <div style="flex: 1;">
+        <div class="post-title">Magic Harry</div>
+      </div>
+      <div class="post-menu-container">
+        <button
+          class="post-menu-btn"
+          aria-label="Opciones del post"
+          onclick="togglePostMenu(this)"
+        >
+          <i class="bi bi-three-dots-vertical"></i>
+        </button>
+        <div class="post-menu" role="menu">
+          <button role="menuitem" onclick="closePostMenu()">Comentarios</button>
+          <button role="menuitem" onclick="closePostMenu()">Compartir</button>
+          <button role="menuitem" onclick="closePostMenu()">Favoritos</button>
+          <button role="menuitem" onclick="closePostMenu()">Guardar</button>
+          <button role="menuitem" onclick="closePostMenu()">Alertas</button>
+          <button role="menuitem" onclick="closePostMenu()">Archivar</button>
+          <button
+            role="menuitem"
+            onclick="confirmDelete(this.closest('.post'))"
+            style="color:#b33; font-weight:bold;"
+          >
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="post-img"
+      style="background-image: url(https://static1.srcdn.com/wordpress/wp-content/uploads/2019/07/Harry-Potter-Wands-Feature.jpg);"
+    ></div>
+    <div class="post-body">
+      <div class="post-description">
+        Esta es una descripción para el segundo post de prueba.
+      </div>
+    </div>
+    <div class="post-actions">
+      <button onclick="toggleLike(this)"><i class="bi bi-heart"></i></button>
+      <button><i class="bi bi-chat"></i></button>
+      <button><i class="bi bi-share"></i></button>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Modal de confirmación -->
+  <div class="modal" id="deleteModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <div class="modal-content">
+      <p id="modalDesc">¿Estás seguro de que quieres eliminar esta publicación?</p>
+      <button id="confirmDeleteBtn">Eliminar</button>
+      <button onclick="closeModal()">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- Snackbar -->
+  <div id="snackbar" class="snackbar">Publicación eliminada correctamente</div>
+
+  <!-- Navbar inferior -->
+  <nav class="bottom-navbar">
+    <a href="HOME.html" class="nav-item">
+      <img src="../../ICONS/1x/HOME_SELEC.png" alt="Home" />
+      <span>Home</span>
+    </a>
+    <a href="BUSCAR.html" class="nav-item">
+      <img src="../../ICONS/1x/SEARCH.png" alt="Buscar" />
+      <span>Buscar</span>
+    </a>
+    <a href="CREAR.html" class="nav-item">
+      <img src="../../ICONS/1x/UPLOAD.png" alt="Crear" />
+      <span>Crear</span>
+    </a>
+    <a href="NOTIS.html" class="nav-item">
+      <img src="../../ICONS/1x/NEWS.png" alt="Notificaciones" />
+      <span>Notif.</span>
+    </a>
+    <a href="PERFIL.html" class="nav-item">
+      <img src="../../ICONS/1x/PROFILE.png" alt="Perfil" />
+      <span>Perfil</span>
+    </a>
+  </nav>
+
+  <!-- Floating Action Button -->
+  <a href="CREAR.html" class="fab" aria-label="Crear publicación">
+    <i class="bi bi-plus-lg"></i>
+  </a>
+
+  <script>
+    // Toggle Like heart icon
+    function toggleLike(button) {
+      const icon = button.querySelector("i");
+      icon.classList.toggle("bi-heart");
+      icon.classList.toggle("bi-heart-fill");
+      icon.classList.toggle("liked");
+    }
+
+    // Toggle post menu visibility
+    function togglePostMenu(button) {
+      closeAllPostMenus();
+      const menu = button.nextElementSibling;
+      if (menu.style.display === "flex") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "flex";
+        menu.style.flexDirection = "column";
+      }
+      event.stopPropagation();
+    }
+
+    // Close all post menus
+    function closeAllPostMenus() {
+      document.querySelectorAll(".post-menu").forEach((menu) => {
+        menu.style.display = "none";
+      });
+    }
+
+    // Close post menu (called by menu option buttons)
+    function closePostMenu() {
+      closeAllPostMenus();
+    }
+
+    // Variables to store the post to delete
+    let postToDelete = null;
+
+    // Show confirmation modal for deletion
+    function confirmDelete(postElement) {
+      closeAllPostMenus();
+      postToDelete = postElement;
+      document.getElementById("deleteModal").style.display = "flex";
+    }
+
+    // Close modal
+    function closeModal() {
+      document.getElementById("deleteModal").style.display = "none";
+      postToDelete = null;
+    }
+
+    // Delete post and show snackbar
+    function deletePost() {
+      if (postToDelete) {
+        postToDelete.remove();
+        postToDelete = null;
+        closeModal();
+        showSnackbar();
+      }
+    }
+
+    // Show snackbar confirmation
+    function showSnackbar() {
+      const snackbar = document.getElementById("snackbar");
+      snackbar.classList.add("show");
+      setTimeout(() => {
+        snackbar.classList.remove("show");
+      }, 3000);
+    }
+
+    // Close menus when clicking outside
+    document.addEventListener("click", () => {
+      closeAllPostMenus();
+    });
+
+    // Stop propagation when clicking inside menu to avoid closing it
+    document.querySelectorAll(".post-menu").forEach((menu) => {
+      menu.addEventListener("click", (e) => e.stopPropagation());
+    });
+
+    // Attach delete button event
+    document.getElementById("confirmDeleteBtn").addEventListener("click", deletePost);
+  </script>
+</body>
+</html>
