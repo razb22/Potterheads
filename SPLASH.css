@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Splash Screen */
+.splash-screen {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px; /* Espacio entre las dos imágenes */
+  position: fixed;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.splash-screen input[type="image"],
+.splash-screen img {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
