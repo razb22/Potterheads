@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Splash Screen</title>
+  <link href="SPLASH.css" rel="stylesheet" type="text/css">
+  <style>
+    .fade-out {
+      opacity: 0;
+      transition: opacity 1s ease-out;
+    }
+  </style>
+  <script>
+    // Esperar 5 segundos, aplicar fade-out y luego redirigir
+    window.addEventListener("DOMContentLoaded", function () {
+      setTimeout(() => {
+        const splash = document.querySelector(".splash-screen");
+        splash.classList.add("fade-out");
+
+        // Esperar a que termine el fade antes de redirigir (1s después)
+        setTimeout(() => {
+          window.location.href = "home.html";
+        }, 1000);
+      }, 5000);
+    });
+  </script>
+</head>
+
+<body>
+
+  <div class="splash-screen">
+    <input type="image" name="splash" id="splash" src="LOGO_TEST_2.png" alt="Logo App" />
+    <img src="../APP/UTIL/POTTER HEADS.png" alt="Imagen secundaria">
+  </div>
+
+</body>
+</html>
